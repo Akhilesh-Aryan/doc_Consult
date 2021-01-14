@@ -58,7 +58,7 @@ This is dashboard | Admin panel
                     </td>
                 </tr>
             @endforeach
-            </table>
+       </table>
     </div>
 </div>
 @endsection
