@@ -7,7 +7,7 @@ This is my | profile
 <div class="container mb-3 mt-5">
     <div class="row">
         <div class="col-lg-9 mx-auto">
-            <div class="card shadow-sm p-3">
+            <div class="card shadow-lg  p-3">
                 <div class="row d-flex">
                 <div class="col-lg-4">
                     <a href="" class="ms-5"><img src="{{asset('images/' .$doctor->image)}}" alt="profile picture" height="130px" class=" w-50 card-img-top rounded-circle"></a>
@@ -15,7 +15,7 @@ This is my | profile
                     <p class="text-dark ms-3 lead">{{$doctor->contact}}</p>
                     <div class="list-group">
                         <span class="list-group-item list-group-item-action bg-success text-white lead">My Profile</span>
-                        <a href="" class="list-group-item list-group-item-action">My Appoitments</a>
+                        <a href="{{route('patients')}}" class="list-group-item list-group-item-action">My Appoitments</a>
                         <a href="" class="list-group-item list-group-item-action">Lab Appoitments</a>
                         <a href="" class="list-group-item list-group-item-action">Change Password</a>
                         <a href="" class="list-group-item list-group-item-action">Logout</a>
@@ -82,7 +82,7 @@ This is my | profile
                                 </div>
                             </div>
                             <div class="row">
-                                <h5 class="text-danger mt-3 mb-3 bg-white">Clinic/Hospital Address</h5>
+                                <h5 class=" mt-3 mb-3">Clinic/Hospital Address</h5>
                                 <div class="col-sm-6">
                                     <label for="city" class="">City/Village</label>
                                     <input type="text" class="form-control" name="city" value="{{$doctor->city}}">

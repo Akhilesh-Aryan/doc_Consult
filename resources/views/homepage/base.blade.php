@@ -24,9 +24,7 @@
                     <a href="" class="btn btn-success my-3 ms-4 text-white">Your Appoitment</a>
                     @auth
                     <a href="{{route('myprofile')}}" class="btn btn-success my-3 ms-4 text-white">My Profile</a>
-                    @endauth
-                    @auth
-                    <a href="{{route('docProfile')}}" class="btn btn-success my-3 ms-4 text-white">My Profile</a>
+                    <a href="{{route('docProfile')}}" class="btn btn-success my-3 ms-4 text-white">Doc_Profile</a>
                     @endauth
                     <div class=" float-end dropdown me-5 mt-3">
                         <button class="btn btn-success dropdown-toggle ms-4" type="button" id="dropdownMenuButton"

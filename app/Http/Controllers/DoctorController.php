@@ -8,10 +8,6 @@ use App\Models\User;
 class DoctorController extends Controller
 {
 
-    public function __construct(){
-        $this->middleware('auth');
-    }
-
 
     public function docreg(){
         if(Auth::check()){
@@ -52,22 +48,21 @@ class DoctorController extends Controller
       $d->fees = $request->fees;
       $d->user_id = Auth::id();
       $d->save();
-      return redirect()->back();
+      return redirect()->route('docProfile');
     }
     public function doctor(){
         $data['doctor'] = Doctor::all();
         return view('homepage.index',$data);
-     }
-     public function docProfile(Request $request){
+    }
+
+    public function docProfile(Request $request){
 
         if(User::where([['id',Auth::id()],['isAdmin',TRUE]])->exists()){
             return redirect()->route('admin.dashboard');
-
-
-            if(User::where([['id',Auth::id()],['isDoctor',TRUE]])->exists()){
-                return redirect()->route('docProfile');
-            }}
-
+            // if(User::where([['id',Auth::id()],['isDoctor',TRUE]])->exists()){
+            //     return redirect()->route('docProfile');
+            // }
+        }
 
         if(Doctor::where('user_id',Auth::id())->doesntExist()){
             return redirect()->route('docreg');

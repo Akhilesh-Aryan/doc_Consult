@@ -3,8 +3,8 @@
 This is | homepage
 @endsection
 @section('content')
-<div class="container-fluid bg-primary text-white">
-    <div class="row p-3">
+<div class="container-fluid pb-5 text-white" style="background-image:url('images/cats.jpg')">
+    <div class="row p-3 pb-5">
         <h4 class="display-4 text-center ">Welcome To Our Services</h4>
         <h3 class=" text-center mt-3">Find and Book</h3>
         <div class="col-lg-6 p-1 mx-auto">
@@ -26,23 +26,20 @@ This is | homepage
                 </div>
             </form>
         </div>
-        <p class="lead my-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eum voluptate, at
-            expedita voluptatum ducimus dicta consectetur quas minima repudiandae, labore distinctio aspernatur
-            voluptatibus nobis ut. Laborum tempora doloremque deleniti!</p>
-        <hr>
-        <h3 class="text-center fw-light">Safety of your data is our
+        <h3 class="text-center mt-5 fw-light">Safety of your data is our
             top priority...
         </h3>
+        <p class="mt-4 lead text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, tempora at ipsa nam voluptates, veritatis modi hic necessitatibus praesentium harum a et laudantium. Ducimus laudantium illum, dolorum iste ratione maiores?</p>
 
     </div>
 </div>
 </div>
-<div class="container-fluid p-5 bg-light">
+<div class="container p-5">
     <div class="row d-flex">
         @foreach($doctor as $d)
         <div class="col-lg-4">
-            <div class="card shadow-sm p-2">
-                <a href="" class="ms-5"><img src="{{asset('images/'.$d->image)}}" alt="image" height="150px" class="ms-5 card-img-top w-50 rounded-circle"></a>
+            <div class="card shadow-lg p-2">
+                <a href="" class="ms-5"><img src="{{asset('images/'.$d->image)}}" alt="image" height="140px" class="ms-5 card-img-top w-50 rounded-circle"></a>
                 <div class="card-body">
                     <h4 class="text-center text-success">Dr. Gopal Chandra </h4>
                     <p class="text-center text-success">{{$d->designation}}</p>

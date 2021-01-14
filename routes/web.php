@@ -21,6 +21,7 @@ Route::get('/',[DoctorController::class,'doctor'])->name('doctor');
 Route::prefix('admin')->group(function(){
     Route::get('/dashboard',[AdminController::class,"dashboard"])->name('admin.dashboard');
     Route::get('/patients',[AdminController::class,"patients"])->name('patients');
+    Route::get('/doctors',[AdminController::class,"doctors"])->name('doctors');
 });
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
