@@ -17,16 +17,16 @@ class AdminController extends Controller
             return redirect()->route('myprofile');
         }
 
-        // $data['doctor'] = Doctor::all()->count();
-        // return view('admin.dashboard');
-
-        $data['doctors'] = Doctor::all();
+         $data['doctors'] = Doctor::all()->count();
         return view('admin.dashboard',$data);
     }
+    public function doctors(){
+        $data['doctors'] = Doctor::all();
+        return view('admin.doctors',$data);
+    }
+
     public function patients(){
-    //     if(User::where([['id',Auth::id()],['isAdmin',TRUE]])->exists()){
-    //         return redirect()->route('patients');
-    // }
+
         $data['patients'] = Patient::all();
         return view('admin.patients', $data);
     }

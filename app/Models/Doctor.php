@@ -9,4 +9,7 @@ class Doctor extends Model
 {
     use HasFactory;
     protected $guarded = [];
+public function getContactAttribute($value){
+    return "+91 " .$value;
+   }
 }

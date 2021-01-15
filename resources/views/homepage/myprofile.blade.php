@@ -7,15 +7,15 @@ This is my | profile
 <div class="container mb-3 mt-5">
     <div class="row">
         <div class="col-lg-9 mx-auto">
-            <div class="card shadow-sm p-3">
+            <div class="card shadow-lg p-3">
                 <div class="row d-flex">
                 <div class="col-lg-4">
-                    <a href="" class="ms-5"><img src="{{asset('images/' .$patient->image)}}" alt="profile picture" height="130px" class=" w-50 card-img-top rounded-circle"></a>
+                    <a href="" class="ms-5"><img src="{{asset('images/' .$patient->image)}}" alt="profile picture" height="160px" class=" w-50 card-img-top rounded-circle"></a>
                     <p class="text-dark text-center mt-2 lead">Hii Akhilesh !</p>
                     <p class="text-dark ms-3 lead">{{$patient->contact}}</p>
                     <div class="list-group">
                         <span class="list-group-item list-group-item-action bg-success text-white lead">My Profile</span>
-                        <a href="" class="list-group-item list-group-item-action">My Appoitments</a>
+                        <a href="{{route('docProfile')}}" class="list-group-item list-group-item-action">My Appoitments</a>
                         <a href="" class="list-group-item list-group-item-action">Lab Appoitments</a>
                         <a href="" class="list-group-item list-group-item-action">Change Password</a>
                         <a href="" class="list-group-item list-group-item-action">Logout</a>
