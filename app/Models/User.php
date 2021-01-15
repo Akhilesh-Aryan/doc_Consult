@@ -59,7 +59,7 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function patient(){
-        return $this->hasOne('App\Models\Patient','user_id','id');
-        }
+        public function getNameAttribute($value){
+            return "Mr. " .$value;
+           }
 }

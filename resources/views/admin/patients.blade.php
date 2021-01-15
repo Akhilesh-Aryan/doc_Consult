@@ -21,8 +21,8 @@ patients | Admin Panel
             @foreach($patients as $p)
                 <tr>
                     <td>{{$p->id}}</td>
-                    <td>{{$p->name}}</td>
-                    <td>{{$p->email}}</td>
+                    <td>{{$p->getUser->name}}</td>
+                    <td>{{$p->getUser->email}}</td>
                     <td>{{$p->contact}}</td>
                     <td>{{$p->age}}</td>
                     <td>{{$p->gender}}</td>

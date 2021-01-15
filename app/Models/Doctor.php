@@ -12,4 +12,8 @@ class Doctor extends Model
 public function getContactAttribute($value){
     return "+91 " .$value;
    }
+
+   public function getUser(){
+       return $this->hasOne('App\Models\User','id','user_id');
+   }
 }

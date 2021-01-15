@@ -4,8 +4,8 @@
 This is Registered | doctors
 @endsection
 @section('content')
-<div class="container">
-    <div class="row bg-light mt-4">
+<div class="container-fluid">
+    <div class="row bg-light p-3">
         <h3 class="text-center text-danger fw-light">Doctors List</h3>
         <hr>
         <table class="table table-bordered">
@@ -28,8 +28,8 @@ This is Registered | doctors
             @foreach($doctors as $d)
             <tr>
                 <td>{{$d->id}}</td>
-                <td></td>
-                     <td></td>
+                    <td>{{$d->getUser->name}}</td>
+                     <td>{{$d->getUser->email}}</td>
                     <td>{{$d->contact}}</td>
                     <td>{{$d->gender}}</td>
                     <td>{{$d->hname}}</td>

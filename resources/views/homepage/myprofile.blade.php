@@ -10,8 +10,13 @@ This is my | profile
             <div class="card shadow-lg p-3">
                 <div class="row d-flex">
                 <div class="col-lg-4">
+<<<<<<< HEAD
                     <a href="" class="ms-5"><img src="{{asset('images/' .$patient->image)}}" alt="profile picture" height="160px" class=" w-50 card-img-top rounded-circle"></a>
                     <p class="text-dark text-center mt-2 lead">Hii Akhilesh !</p>
+=======
+                    <a href="" class="ms-5"><img src="{{asset('images/' .$patient->image)}}" alt="profile picture" height="130px" class=" w-50 card-img-top rounded-circle"></a>
+                    <p class="text-dark text-center mt-2 lead">{{$patient->getUser->name}}</p>
+>>>>>>> d3e9dba4d0e14c26b45ee049bbbed6625601c73f
                     <p class="text-dark ms-3 lead">{{$patient->contact}}</p>
                     <div class="list-group">
                         <span class="list-group-item list-group-item-action bg-success text-white lead">My Profile</span>
@@ -27,7 +32,7 @@ This is my | profile
                         <div class="row mt-5 d-flex">
                             <div class="col-sm-6">
                                 <label for="Name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="" value="{{$patient->name}}">
+                                <input type="text" class="form-control" id="name" placeholder="" value="{{$patient->getUser->name}}">
                             </div>
                             <div class="col-sm-6">
                                 <label for="contact" class="contact">Mobile no</label>
@@ -37,7 +42,7 @@ This is my | profile
                         <div class="row">
                             <div class="col-sm-6">
                                 <label for="Email" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="email" placeholder="update email" value="">
+                                <input type="text" class="form-control" id="email" placeholder="update email" value="{{$patient->getUser->email}}">
                             </div>
                             <div class="col-sm-6">
                                 <label for="gender" class="contact">Gender</label>

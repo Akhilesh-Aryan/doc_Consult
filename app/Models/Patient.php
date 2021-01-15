@@ -13,7 +13,11 @@ class Patient extends Model
         return "+91 " .$value;
     }
 
-    public function patients(){
-        return $this->hasMany('App\Models\User','id','user_id');
+    // public function patients(){
+    //     return $this->hasMany('App\Models\User','id','user_id');
+    // }
+
+    public function getUser(){
+        return $this->hasOne('App\Models\User','id','user_id');
     }
 }
