@@ -10,17 +10,12 @@ This is my | profile
             <div class="card shadow-lg  p-3">
                 <div class="row d-flex">
                 <div class="col-lg-4">
-<<<<<<< HEAD
-                    <a href="" class="ms-5"><img src="{{asset('images/' .$doctor->image)}}" alt="profile picture" height="160px" class=" w-50 card-img-top rounded-circle"></a>
-                    <p class="text-dark text-center mt-2 lead">Hii Akhilesh !</p>
-=======
                     <a href="" class="ms-5"><img src="{{asset('images/' .$doctor->image)}}" alt="profile picture" height="130px" class=" w-50 card-img-top rounded-circle"></a>
-                    <p class="text-dark text-center mt-2 lead">{{$doctor->getUser->name}}</p>
->>>>>>> d3e9dba4d0e14c26b45ee049bbbed6625601c73f
+                    <p class="text-dark text-center mt-2 lead">{{ $doctor->users->name}}</p>
                     <p class="text-dark ms-3 lead">{{$doctor->contact}}</p>
                     <div class="list-group">
                         <span class="list-group-item list-group-item-action bg-success text-white lead">My Profile</span>
-                        <a href="{{route('patients')}}" class="list-group-item list-group-item-action">My Appoitments</a>
+                        <a href="{{route('drAppoitments')}}" class="list-group-item list-group-item-action">My Appoitments</a>
                         <a href="" class="list-group-item list-group-item-action">Lab Appoitments</a>
                         <a href="" class="list-group-item list-group-item-action">Change Password</a>
                         <a href="" class="list-group-item list-group-item-action">Logout</a>
@@ -33,7 +28,7 @@ This is my | profile
                         <div class="row mt-3 d-flex">
                             <div class="col-sm-6">
                                 <label for="Name" class="form-label">Name</label>
-                                <input type="text" class="form-control" name="name" disabled value="{{$doctor->getUser->name}}">
+                                <input type="text" class="form-control" name="name" disabled value="{{$doctor->users->name}}">
                             </div>
                             <div class="col-sm-6">
                                 <label for="contact" class=" mt-2">Mobile no</label>
@@ -46,7 +41,7 @@ This is my | profile
                         <div class="row">
                             <div class="col-sm-6">
                                 <label for="Email" class="">Email</label>
-                                <input type="text" class="form-control" name="email" placeholder="" disabled value="{{$doctor->getUser->email}}">
+                                <input type="text" class="form-control" name="email" placeholder="" disabled value="{{$doctor->users->email}}">
                             </div>
                             <div class="col-sm-6">
                                 <label for="gender" class="">Gender</label>

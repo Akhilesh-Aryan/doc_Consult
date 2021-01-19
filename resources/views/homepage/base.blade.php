@@ -15,16 +15,19 @@
     <nav class="navbar navbar-expand navbar-dark bg-success shadow p-2">
         <div class="container">
             <a class="navbar-brand ml-5" href="/">
-                <h4 class="text-white">DocConsult</h4>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                  </svg>
+                      <span class="text-info fw-bold">MeeTdocs</span>
             </a>
             <ul class="navbar-nav">
                 <div class="p-3 text-center">
                     <a href="/" class="btn btn-success my-3 ms-4 text-white">Home</a>
-                    <a href="" class="btn btn-success my-3 ms-4 text-white">Doctor Appoitment</a>
-                    <a href="" class="btn btn-success my-3 ms-4 text-white">Your Appoitment</a>
+                    <a href="" class="btn btn-success my-3 ms-4 text-white">Doctor Appoitments</a>
+                    <a href="" class="btn btn-success my-3 ms-4 text-white">Lab Appoitments</a>
+                    <a href="" class="btn btn-success my-3 ms-4 text-white">Your Appoitments</a>
                     @auth
-                    <a href="{{route('myprofile')}}" class="btn btn-success my-3 ms-4 text-white">My Profile</a>
-                    <a href="{{route('docProfile')}}" class="btn btn-success my-3 ms-4 text-white">Doc_Profile</a>
+                    <a href="{{route('docProfile')}}" class="btn btn-success my-3 ms-4 text-white">My Profile</a>
                     @endauth
                     <div class=" float-end dropdown me-5 mt-3">
                         <button class="btn btn-success dropdown-toggle ms-4" type="button" id="dropdownMenuButton"

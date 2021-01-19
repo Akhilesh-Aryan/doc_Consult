@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Patient;
@@ -24,14 +26,20 @@ class PatientController extends Controller
         return view('homepage.myprofile',$data);
     }
     public function apply(){
-        if(Auth::check()){
+        if(User::where([['id',Auth::id()],['isAdmin',TRUE]])->exists()){
+            return redirect()->route('admin.dashboard');
+        }
+        if (User::where([['id',Auth::id()],['isDoctor',TRUE]])->exists()){
+            return redirect()->route('docProfile');
+        }
+        elseif(Auth::check()){
         return view('homepage.apply');
         }
         else{
             return redirect()->route('login');
         }
     }
-    public function applyStore(Request $request){
+    public function applyStore(Request $request,$id){
         $request->validate([
             "contact"=>'required|integer',
             "age"=>'required',
@@ -51,6 +59,7 @@ class PatientController extends Controller
        $p->address = $request->address;
        $p->image = $filename;
        $p->user_id = Auth::id();
+       $p->doctor_id = $id;
        $p->save();
         return redirect()->route('myprofile');
     }

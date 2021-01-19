@@ -3,7 +3,7 @@
 This is | homepage
 @endsection
 @section('content')
-<div class="container-fluid pb-5 text-white" style="background-image:url('images/cats.jpg')">
+<div class="container-fluid pb-5 text-white" style="background:url('images/cats.jpg')">
     <div class="row p-3 pb-5">
         <h4 class="display-4 text-center ">Welcome To Our Services</h4>
         <h3 class=" text-center mt-3">Find and Book</h3>
@@ -41,13 +41,13 @@ This is | homepage
             <div class="card shadow-lg p-2">
                 <a href="" class="ms-5"><img src="{{asset('images/'.$d->image)}}" alt="image" height="165px" class="ms-5 card-img-top w-50 rounded-circle"></a>
                 <div class="card-body">
-                    <h4 class="text-center text-success">Dr. Gopal Chandra </h4>
+                    <h4 class="text-center text-success">{{ $d->users->name }}</h4>
                     <p class="text-center text-success">{{$d->designation}}</p>
                     <p class="text-center">{{$d->district}}</p>
                     <p class="text-center">{{$d->speciality}}</p>
                     <p class="text-center mt-3">
                         <a href="" class="btn btn-success btn text-white">FEE {{$d->fees}}/-</a>
-                        <a href="{{ route('apply') }}"
+                        <a href="{{ route('apply',['id'=>$d->id]) }}"
                         class="btn btn-success btn text-white">Book now</a>
                     </p>
                 </div>

@@ -5,12 +5,36 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Doctor;
 use Illuminate\Http\Request;
 use App\Models\User;
+use GuzzleHttp\Middleware;
+
 class DoctorController extends Controller
 {
+    public function docProfile(Request $request){
+
+        if(User::where([['id',Auth::id()],['isAdmin',TRUE]])->exists()){
+            return redirect()->route('admin.dashboard');
+
+        }
+        //   if(User::where([['id',Auth::id()],['isDoctor',TRUE]])->exists()){
+        //         return redirect()->route('docProfile');
+        //     }
+
+        if(Doctor::where('user_id',Auth::id())->doesntExist()){
+            return redirect()->route('docreg');
+        }
+         $data['doctor'] = Doctor::where('user_id',Auth::id())->first();
+         return view('homepage.docProfile',$data);
+     }
 
 
     public function docreg(){
-        if(Auth::check()){
+        if(User::where([['id',Auth::id()],['isAdmin',TRUE]])->exists()){
+            return redirect()->route('admin.dashboard');
+        }
+        elseif(User::where([['id',Auth::id()],['isDoctor',TRUE]])->exists()){
+            return redirect()->route('docProfile');
+        }
+        elseif(Auth::check()){
         return view('homepage.docreg');
         }
         else{
@@ -55,23 +79,9 @@ class DoctorController extends Controller
         return view('homepage.index',$data);
     }
 
-    public function docProfile(Request $request){
-
-        if(User::where([['id',Auth::id()],['isAdmin',TRUE]])->exists()){
-            return redirect()->route('admin.dashboard');
-
-
-        }
-          if(User::where([['id',Auth::id()],['isDoctor',TRUE]])->exists()){
-                return redirect()->route('docProfile');
-            }
-
-        if(Doctor::where('user_id',Auth::id())->doesntExist()){
-            return redirect()->route('docreg');
-        }
-         $data['doctor'] = Doctor::where('user_id',Auth::id())->first();
-         return view('homepage.docProfile',$data);
-
-
-     }
+    public function drAppoitments(){
+        $doctor = Doctor::where('user_id',Auth::id())->first();
+        $data['patient'] = User::find($doctor->user_id);
+        return view('homepage.drAppoitments',$data);
+    }
 }

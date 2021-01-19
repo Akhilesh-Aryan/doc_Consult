@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
         <div class="container-fluid">
-        <a class="navbar-brand" href=""><h5 class="text-white">Admin Panel</h5></a>
+        <a class="navbar-brand" href="{{route('admin.dashboard') }}"><h5 class="text-white">Admin Panel</h5></a>
         <ul class="navbar-nav ml-auto mr-5">
         @auth
             <form action="{{ route('logout') }}" method="POST">

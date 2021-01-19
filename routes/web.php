@@ -8,8 +8,8 @@ Route::get('/', function () {
     return view('homepage.index');
 })->name('index');
 
-Route::get('/apply',[PatientController::class,'apply'])->name('apply');
-Route::post('/apply',[PatientController::class,'applyStore'])->name('applyStore');
+Route::get('/apply/{id}',[PatientController::class,'apply'])->name('apply');
+Route::post('/apply/{id}',[PatientController::class,'applyStore'])->name('applyStore');
 Route::get('/myprofile',[PatientController::class,'myprofile'])->name('myprofile');
 Route::get('/docProfile',[DoctorController::class,'docProfile'])->name('docProfile');
 
@@ -17,6 +17,7 @@ Route::get('/docreg',[DoctorController::class,'docreg'])->name('docreg');
 Route::post('/docreg',[DoctorController::class,'docStore'])->name('docStore');
 Route::get('/',[DoctorController::class,'doctor'])->name('doctor');
 
+Route::get('/drAppoitments',[DoctorController::class,'drAppoitments'])->name('drAppoitments');
 
 Route::prefix('admin')->group(function(){
     Route::get('/dashboard',[AdminController::class,"dashboard"])->name('admin.dashboard');

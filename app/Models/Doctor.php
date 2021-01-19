@@ -13,7 +13,11 @@ public function getContactAttribute($value){
     return "+91 " .$value;
    }
 
-   public function getUser(){
+   public function users(){
        return $this->hasOne('App\Models\User','id','user_id');
+   }
+
+   public function getPatients(){
+       return $this->hasMany('App\Models\Patient','user_id','id');
    }
 }

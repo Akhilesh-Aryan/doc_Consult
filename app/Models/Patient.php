@@ -12,12 +12,8 @@ class Patient extends Model
     public function getContactAttribute($value){
         return "+91 " .$value;
     }
-
-    // public function patients(){
-    //     return $this->hasMany('App\Models\User','id','user_id');
-    // }
-
-    public function getUser(){
-        return $this->hasOne('App\Models\User','id','user_id');
+    
+    public function users(){
+        return $this->hasOne('App\Models\User','user_id','id');
     }
 }

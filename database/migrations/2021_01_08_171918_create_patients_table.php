@@ -18,6 +18,7 @@ class CreatePatientsTable extends Migration
             $table->string('contact');
             $table->string('age');
             $table->foreignId('user_id')->constrained();
+            $table->foreignId('doctor_id')->constrained();
             $table->string('gender');
             $table->string('address');
             $table->text('desc');

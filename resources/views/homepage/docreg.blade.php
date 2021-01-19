@@ -11,7 +11,7 @@ This is my | Docprofile
                 <div class="row d-flex">
                 <div class="col-lg-4">
                     {{-- <a href="" class="ms-5"><img src="{{asset('images/' .$patient->image)}}" alt="profile picture" height="130px" class=" w-50 card-img-top rounded-circle"></a> --}}
-                    <p class="text-dark text-center mt-2 lead">Hii Akhilesh !</p>
+                    <p class="text-dark text-center mt-2 lead">Hello!</p>
                     <p class="text-dark ms-3 lead"></p>
                     <div class="list-group">
                         <span class="list-group-item list-group-item-action bg-success text-white lead">My Profile</span>
@@ -28,7 +28,7 @@ This is my | Docprofile
                         <div class="row mt-3 d-flex">
                             <div class="col-sm-6">
                                 <label for="Name" class="form-label">Name</label>
-                                <input type="text" class="form-control" name="name" disabled value="">
+                                <input type="text" class="form-control" name="name" disabled value="" placeholder="your name is registered already">
                             </div>
                             <div class="col-sm-6">
                                 <label for="contact" class="text-danger mt-2">Mobile no *</label>
@@ -41,7 +41,7 @@ This is my | Docprofile
                         <div class="row">
                             <div class="col-sm-6">
                                 <label for="Email" class="">Email</label>
-                                <input type="text" class="form-control" name="email" placeholder="" disabled value="">
+                                <input type="text" class="form-control" name="email" placeholder="Email is Registered" disabled value="">
                             </div>
                             <div class="col-sm-6">
                                 <label for="gender" class="text-danger">Gender *</label>
