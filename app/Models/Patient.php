@@ -14,6 +14,6 @@ class Patient extends Model
     }
     
     public function users(){
-        return $this->hasOne('App\Models\User','user_id','id');
+        return $this->hasOne('App\Models\User','id','user_id');
     }
 }

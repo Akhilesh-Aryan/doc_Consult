@@ -36,7 +36,10 @@ class AdminController extends Controller
         if(User::where([['id',Auth::id()],['isAdmin',FALSE]])->exists()){
             return redirect()->route('myprofile');
         }
-        $data['patients'] = Patient::all();
-        return view('admin.patients', $data);
+        // $data['patients'] = Patient::all();
+        // return view('admin.patients', $data);
+
+        $data['patients'] =  Patient::get();
+        return view('admin.patients',$data);
     }
 }

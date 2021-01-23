@@ -16,7 +16,8 @@
                 <th>Problems</th>
                 <th>Action</th>
             </tr>
-            @foreach($patient->patients as $pts)       
+
+            @foreach($doctors->getPatients as $pts)       
             <tr>
                 <td>{{ $pts->id }}</td>
                 <td>{{ $pts->users->name }}</td>

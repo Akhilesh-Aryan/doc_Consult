@@ -18,6 +18,6 @@ public function getContactAttribute($value){
    }
 
    public function getPatients(){
-       return $this->hasMany('App\Models\Patient','user_id','id');
+       return $this->hasMany('App\Models\Patient','doctor_id','id');
    }
 }

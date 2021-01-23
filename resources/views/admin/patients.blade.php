@@ -6,6 +6,7 @@ patients | Admin Panel
 @section('content')
 <div class="container mt-2">
     <div class="row bg-light">
+        <h2 class="text-danger text-center fw-light">Patients List</h2><hr> 
         <table class="table table-bordered">
             <tr>
                 <th>Id</th>
@@ -21,8 +22,8 @@ patients | Admin Panel
             @foreach($patients as $p)
                 <tr>
                     <td>{{$p->id}}</td>
-                    <td>{{$p->getUser->name}}</td>
-                    <td>{{$p->getUser->email}}</td>
+                    <td>{{$p->users->name}}</td>
+                    <td>{{$p->users->email}}</td>
                     <td>{{$p->contact}}</td>
                     <td>{{$p->age}}</td>
                     <td>{{$p->gender}}</td>

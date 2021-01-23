@@ -28,8 +28,8 @@ This is Registered | doctors
             @foreach($doctors as $d)
             <tr>
                 <td>{{$d->id}}</td>
-                    <td>{{$d->getUser->name}}</td>
-                     <td>{{$d->getUser->email}}</td>
+                    <td>{{$d->users->name}}</td>
+                     <td>{{$d->users->email}}</td>
                     <td>{{$d->contact}}</td>
                     <td>{{$d->gender}}</td>
                     <td>{{$d->hname}}</td>
