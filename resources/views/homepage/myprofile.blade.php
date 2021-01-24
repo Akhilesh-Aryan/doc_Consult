@@ -10,12 +10,12 @@ This is my | profile
             <div class="card shadow-lg p-3">
                 <div class="row d-flex">
                 <div class="col-lg-4">
-                    <a href="" class="ms-5"><img src="{{asset('images/' .$patient->image)}}" alt="profile picture" height="160px" class=" w-50 card-img-top rounded-circle"></a>
+                    <a href="" class="ms-5"><img src="{{asset('images/' .$patient->image)}}" alt="dp not available" height="160px" class=" w-50 card-img-top rounded-circle"></a>
                     <p class="text-dark text-center mt-2 lead">{{ $patient->users->name }}</p>
                     <p class="text-dark ms-3 lead">{{$patient->contact}}</p>
                     <div class="list-group">
                         <span class="list-group-item list-group-item-action bg-success text-white lead">My Profile</span>
-                        <a href="{{route('docProfile')}}" class="list-group-item list-group-item-action">My Appoitments</a>
+                        <a href="{{route('myprofile')}}" class="list-group-item list-group-item-action">My Appoitments</a>
                         <a href="" class="list-group-item list-group-item-action">Lab Appoitments</a>
                         <a href="" class="list-group-item list-group-item-action">Change Password</a>
                         <a href="" class="list-group-item list-group-item-action">Logout</a>
@@ -45,7 +45,7 @@ This is my | profile
                             </div>
                         </div>
                         <div class="btn-group float-end mt-3">
-                            <input type="submit" class="me-3 btn btn-danger rounded-0" value="cancel">
+                            <a href="/" class="me-3 btn btn-danger rounded-0">cancel</a>
                             <input type="submit" class="btn btn-success rounded-0" value="save changes">
                         </div>
                     </form>

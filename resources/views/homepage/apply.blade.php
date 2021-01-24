@@ -8,8 +8,10 @@ This is | Registration Page
         <div class="col-lg-9 mx-auto">
             <div class="card shadow-lg">
                 <div class="row">
-                    <div class="col-lg-4">
-                        {{-- <a href=""><img src="{{asset('images/' .$d->image)}}" alt="profile picture" height="130px" class=" w-50 card-img-top"></a> --}}
+                    <div class="col-lg-4 text-center mt-5">
+                        <h2 class="display-6 mt-5 text-success fw-light ms-4">Namaste!!<br><br>
+                        We are Happy to <br> Service You!</h2>
+                        {{-- <a href=""><img src="{{asset('images/' .$doctors->image)}}" alt="profile picture" height="130px" class=" w-50 card-img-top"></a> --}}
                     </div>
                     <div class="col-lg-8">
                         <div class="card">

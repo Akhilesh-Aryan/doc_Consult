@@ -19,8 +19,12 @@ class PatientController extends Controller
             return redirect()->route('admin.dashboard');
         }
 
+        if(User::where([['id',Auth::id()],['isDoctor',TRUE]])->exists()){
+               return redirect()->route('docProfile');
+        }
+
         if(Patient::where('user_id',Auth::id())->doesntExist()){
-            return redirect()->route('apply');
+            return redirect()->back();
         }
         $data['patient'] = Patient::where('user_id',Auth::id())->first();
         return view('homepage.myprofile',$data);
@@ -38,6 +42,7 @@ class PatientController extends Controller
         else{
             return redirect()->route('login');
         }
+       
     }
     public function applyStore(Request $request,$id){
         $request->validate([

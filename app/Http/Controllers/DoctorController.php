@@ -15,9 +15,6 @@ class DoctorController extends Controller
             return redirect()->route('admin.dashboard');
 
         }
-        //   if(User::where([['id',Auth::id()],['isDoctor',TRUE]])->exists()){
-        //         return redirect()->route('docProfile');
-        //     }
 
         if(Doctor::where('user_id',Auth::id())->doesntExist()){
             return redirect()->route('docreg');

@@ -13,6 +13,10 @@ public function getContactAttribute($value){
     return "+91 " .$value;
    }
 
+   public function getFeesAttribute($value){
+       return  $value ."/-";
+   }
+
    public function users(){
        return $this->hasOne('App\Models\User','id','user_id');
    }
