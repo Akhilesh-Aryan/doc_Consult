@@ -21,8 +21,8 @@ This is Registered | doctors
                 <th>City</th>
                 <th>State</th>
                 <th>District</th>
-                <th>Pin Code</th>
                 <th>Fees</th>
+                <th>Status</th>
                 <th>Patients</th>
             </tr>
             @foreach($doctors as $d)
@@ -38,10 +38,19 @@ This is Registered | doctors
                     <td>{{$d->city}}</td>
                     <td>{{$d->state}}</td>
                     <td>{{$d->district}}</td>
-                    <td>{{$d->pin}}</td>
                     <td>{{$d->fees}}</td>
                     <td>
-                        <a href="{{route('patients')}}" class="btn btn-primary btn-sm ">show me</a>
+                    <form action="{{route('editStatus',['user'=>$d->users->id])}}" method ="POST">
+                        @csrf
+                        @method('put')
+                        @if($d->users->isDoctor == false)
+                        <input type="submit" class="btn btn-danger" name="send" value="Pending">
+                        @else
+                        <a href="" class="btn btn-dark">Approved</a>
+                        @endif
+                    </form>
+                    <td>
+                        <a href="{{route('patients')}}" class="btn btn-primary btn-sm">show me</a>
                     </td>
                 </tr>
             @endforeach

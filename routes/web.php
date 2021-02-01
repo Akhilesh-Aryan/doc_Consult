@@ -23,6 +23,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/dashboard',[AdminController::class,"dashboard"])->name('admin.dashboard');
     Route::get('/patients',[AdminController::class,"patients"])->name('patients');
     Route::get('/doctors',[AdminController::class,"doctors"])->name('doctors');
+    Route::put('/doctors',[AdminController::class,'editStatus'])->name('editStatus');
 });
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

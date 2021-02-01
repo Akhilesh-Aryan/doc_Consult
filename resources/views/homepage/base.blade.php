@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <!-- CSS only -->
+    <link rel="stylesheet" href="{{ asset('style.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
@@ -14,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand navbar-dark bg-success">
         <div class="container mt-3">
-            <a class="navbar-brand ms-3 me-5" href="/">
+            <a class="navbar-brand ms-3 me-2" href="/">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                     class="bi bi-heart-fill" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -110,7 +111,7 @@
 
     <footer>
         <div class="container-fluid p-4 bg-success">
-            <div class="row p-4 mt-3">
+            <div class="row p-4 mt-5">
                 <div class="col-lg-4">
                     <p class=" text-center text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"

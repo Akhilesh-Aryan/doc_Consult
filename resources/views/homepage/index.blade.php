@@ -4,6 +4,10 @@ This is | homepage
 @endsection
 @section('content')
 
+@if(session('msg'))
+{!!session('msg')!!}
+@endif
+
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
           <li data-bs-target="#slide1" data-bs-slide-to="0" class="active"></li>

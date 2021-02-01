@@ -13,15 +13,22 @@ class PatientController extends Controller
     public function __construct(){
         $this->middleware('auth');
     }
-    public function myprofile(){
+    public function myprofile(Request $request){
 
         if(User::where([['id',Auth::id()],['isAdmin',TRUE]])->exists()){
             return redirect()->route('admin.dashboard');
         }
+        if(User::where([['id',Auth::id()],['isDoctor',FALSE]])->exists()){
+            $request ->session()->flash('msg',"<div class = 'text-center mt-2 alert alert-warning'>Thank you ! We are processing your request! Please wait while will you get approvel by Admin ! </div>");
+       
+            return redirect()->back();
+        }
 
-        if(User::where([['id',Auth::id()],['isDoctor',TRUE]])->exists()){
+        elseif(User::where([['id',Auth::id()],['isDoctor',TRUE]])->exists()){
                return redirect()->route('docProfile');
         }
+
+      
 
         if(Patient::where('user_id',Auth::id())->doesntExist()){
             return redirect()->back();
@@ -36,6 +43,7 @@ class PatientController extends Controller
         if (User::where([['id',Auth::id()],['isDoctor',TRUE]])->exists()){
             return redirect()->route('docProfile');
         }
+
         elseif(Auth::check()){
         return view('homepage.apply');
         }

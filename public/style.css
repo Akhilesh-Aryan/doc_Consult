@@ -1,0 +1,38 @@
+/* Responsive work */
+/* For Monimum width  */
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  }
+
+@media (min-width: 768px) {  }
+
+@media (min-width: 992px) {  }
+
+@media (min-width: 1200px) { }
+
+@media (min-width: 1400px) { }
+
+/* For max width */
+@media (max-width: 575.98px) { 
+
+    navbar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+ }
+
+
+@media (max-width: 767.98px) {  }
+
+
+@media (max-width: 991.98px) { }
+
+
+@media (max-width: 1199.98px) { }
+
+
+@media (max-width: 1399.98px) { }

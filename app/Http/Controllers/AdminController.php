@@ -5,6 +5,7 @@ use App\Models\Patient;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Doctor;
+use Symfony\Component\HttpFoundation\Request;
 use phpDocumentor\Reflection\PseudoTypes\False_;
 
 class AdminController extends Controller
@@ -36,10 +37,21 @@ class AdminController extends Controller
         if(User::where([['id',Auth::id()],['isAdmin',FALSE]])->exists()){
             return redirect()->route('myprofile');
         }
-        // $data['patients'] = Patient::all();
-        // return view('admin.patients', $data);
-
         $data['patients'] =  Patient::get();
         return view('admin.patients',$data);
+    }
+
+
+    // public function edit(User $user){
+    //          $data['data'] = $user;
+    //         return view('admin.doctors');
+    // }
+
+    public function editStatus(Request $request){
+        // echo $request->user;
+        User::find($request->user)->update([
+            'isDoctor'=>TRUE,
+        ]);
+        return redirect()->back();
     }
 }

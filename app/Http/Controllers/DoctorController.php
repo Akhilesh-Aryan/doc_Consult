@@ -80,4 +80,5 @@ class DoctorController extends Controller
         $data['doctors'] =  Doctor::where('user_id',Auth::id())->first();
         return view('homepage.drAppoitments',$data);
     }
+    
 }
